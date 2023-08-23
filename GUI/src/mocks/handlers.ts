@@ -17,6 +17,7 @@ import { testStoriesData } from './testStories';
 import { modelsData, selectedModelData } from './models';
 import { resultsData } from './results';
 import { userInfoData } from './userInfo';
+import { userRoles } from "./userRoles";
 import { userProfileSettingsData } from './userProfileSettings';
 import { regexData, singleRegexData } from './regex';
 import { activeChatsData } from './activeChats';
@@ -163,6 +164,9 @@ export const handlers = [
   }),
   rest.get(import.meta.env.BASE_URL + 'api/cs-custom-jwt-userinfo', (req, res, ctx) => {
     return res(ctx.json(userInfoData));
+  }),
+  rest.get(import.meta.env.BASE_URL + 'api/cs-get-user-role', (req, res,ctx) => {
+    return res(ctx.json(userRoles));
   }),
   rest.get(import.meta.env.BASE_URL + 'api/cs-get-user-profile-settings', (req, res, ctx) => {
     return res(ctx.json(userProfileSettingsData));

@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import {FC, useEffect} from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 
@@ -36,28 +36,28 @@ const App: FC = () => {
     <Routes>
       <Route element={<Layout />}>
         <Route index element={<Navigate to='/training/intents' />} />
-        <Route path= '/training/intents' element={<Intents />} />
-        <Route path='/training/common-intents' element={<CommonIntents />} />
-        <Route path='/training/intents-followup-training' element={<IntentsFollowupTraining />} />
+        <Route path= '/training/training/intents' element={<Intents />} />
+        <Route path='/training/training/common-intents' element={<CommonIntents />} />
+        <Route path='/training/training/intents-followup-training' element={<IntentsFollowupTraining />} />
         <Route path='/training/regex/:id' element={<RegexDetail />} />
-        <Route path='/training/responses' element={<Responses />} />
-        <Route path='/training/configuration' element={<Configuration />} />
-        <Route path='/training/stories' element={<Stories />} />
+        <Route path='/training/training/responses' element={<Responses />} />
+        <Route path='/training/training/configuration' element={<Configuration />} />
+        <Route path='/training/training/stories' element={<Stories />} />
         <Route path='/training/stories/new' element={<StoriesDetail mode='new' />} />
         <Route path='/training/stories/:id' element={<StoriesDetail mode='edit' />} />
-        <Route path='/training/slots' element={<Slots />} />
+        <Route path='/training/training/slots' element={<Slots />} />
         <Route path='/training/slots/new' element={<SlotsDetail mode='new' />} />
         <Route path='/training/slots/:id' element={<SlotsDetail mode='edit' />} />
-        <Route path='/training/forms' element={<Forms />} />
+        <Route path='/training/training/forms' element={<Forms />} />
         <Route path='/training/forms/new' element={<FormsDetail mode='new' />} />
         <Route path='/training/forms/:id' element={<FormsDetail mode='edit' />} />
-        <Route path='/history/history' element={<History />} />
-        <Route path='/history/appeal' element={<Appeals />} />
-        <Route path='/analytics/overview' element={<IntentsOverview />} />
-        <Route path='/analytics/testcases' element={<Testcases />} />
-        <Route path='/analytics/models' element={<Models />} />
-        <Route path='/analytics/models/:id' element={<ModelsDetail />} />
-        <Route path='/train-new-model' element={<TrainAndTest />} />
+        <Route path='/training/history/history' element={<History />} />
+        <Route path='/training/history/appeal' element={<Appeals />} />
+        <Route path='/training/analytics/overview' element={<IntentsOverview />} />
+        <Route path='/training/analytics/testcases' element={<Testcases />} />
+        <Route path='/training/analytics/models' element={<Models />} />
+        <Route path='/training/analytics/models/:id' element={<ModelsDetail />} />
+        <Route path='/training/train-new-model' element={<TrainAndTest />} />
       </Route>
     </Routes>
   );

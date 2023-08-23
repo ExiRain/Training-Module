@@ -29,7 +29,7 @@ const worker = setupWorker(...handlers);
 const prepare = async () => {
   return worker.start({
     serviceWorker: {
-      url: 'mockServiceWorker.js'
+      url: './mockServiceWorker.js'
     }
   });
 
